@@ -1,0 +1,20 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Simulate build
+        run: |
+          echo "Simulating a build that will fail..."
+      - name: Fail the build intentionally
+        run: |
+          echo "Triggering failure"
+          exit 1
