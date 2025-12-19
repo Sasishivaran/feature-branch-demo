@@ -1,4 +1,5 @@
 name: CI
+
 on:
   push:
     branches: [ main ]
@@ -9,12 +10,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout the repository
       - name: Checkout
         uses: actions/checkout@v4
+
+      # Step 2: Simulate a successful build
       - name: Simulate build
         run: |
-          echo "Simulating a build that will fail..."
-      - name: Fail the build intentionally
-        run: |
-          echo "Triggering failure"
-          exit 1
+          echo "Simulating a build..."
+          echo "Build succeeded!"
